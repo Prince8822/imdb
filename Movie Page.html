@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="imdb.css">
+   
+</head>
+<body>
+
+    <div class="topnav">
+       
+        <a class="active" href="imdb.html">Home</a>
+        <a href="FAV.html" >My Favourite Movies</a>
+        <a href="Movie Page.html">Movie</a>
+        
+      </div>
+   <h1 style="color: blue;">Movie Details</h1>
+
+   <div class="title">
+   <img id="img" src="" alt="img not found">
+    <h1 id="h1"></h1>
+<ul class="info" id="list">
+     
+     
+    </ul>
+</div>
+
+
+<script>
+
+  // CREATE MOVIE DETAILS GETTING MOVIE OBJECT FROM LOCAL STORAGE
+    const myObjectString2 = localStorage.getItem('objectGreeting');
+    const myObject2 = JSON.parse(myObjectString2);
+    console.log(myObject2.Title);  
+    var h1= document.getElementById("h1");
+    h1.innerHTML= "Movie:" + myObject2.Title
+    var list= document.getElementById("list")
+    var li1= document.createElement("li");
+    var li2= document.createElement("li");
+    var li3= document.createElement("li");
+    var li4= document.createElement("li");
+    var li5= document.createElement("li");
+    li1.innerHTML= "Year:" + myObject2.Year
+    li2.innerHTML= "Director:" + myObject2.Director
+    li3.innerHTML= "Genre:" + myObject2.Genre
+    li4.innerHTML= "Actors:" + myObject2.Actors
+    li5.innerHTML= "Plot:" + myObject2.Plot
+    document.getElementById("img").src= myObject2.Poster;
+
+    
+    list.appendChild(li1);
+    list.appendChild(li2);
+    list.appendChild(li3);
+    list.appendChild(li4);
+    list.appendChild(li5);
+  </script>
+</body>
+</html>
+
+

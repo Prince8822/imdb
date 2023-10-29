@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="imdb.css">
+    <script src="im.js"></script>
+    
+</head>
+<body>
+
+    <div class="topnav">
+        <a class="active" href="imdb.html">Home</a>
+        <a href="FAV.html" >My Favourite Movies</a>
+        <a href="Movie Page.html">Movie</a>
+      </div>
+    
+    
+   
+    
+   <div>
+    <script>
+
+      // CREATE MOVIE LIST IN PAGE
+      for(var i=0; i<100;i++){
+          if (localStorage.getItem(i)!=null){
+            console.log(localStorage.getItem(i))
+          var Li = document.createElement("Li"); 
+          var Button = document.createElement("Button"); 
+          Li.id= i;
+          Li.innerHTML = localStorage.getItem(i);
+          var span = document.createElement("SPAN");
+          span.className = "close";
+          span.appendChild(Button).innerHTML = "\u00D7";
+         
+          Li.appendChild(span);
+          document.body.appendChild(Li);
+          }}
+
+
+        // CREATE CLOSE BUTTONS ACTIVE
+          var closebtns = document.getElementsByClassName("close");
+    for (var j = 0; j < closebtns.length; j++) {
+  closebtns[j].addEventListener("click", function() {
+    localStorage.removeItem(this.parentElement.id);
+    this.parentElement.style.display = "none"
+  });
+}
+
+
+     </script>
+   <!-- </div>
+  
+      <button onclick=" DELETE()" >DELETE ALL</button>
+      
+   <div style="border-radius: 2; color: black;" id="SHOW">
+   
+    
+ </div>    -->
+  
+
+
+</body>
+</html>
+
+
